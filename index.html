@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>DJ Ben Saliba</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
@@ -49,12 +50,19 @@
       cursor: pointer;
       color: #1D1D1F;
       padding: 0;
+ transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
     .nav-links button:hover {
+transform: scale(1.06);
       opacity: 0.5;
     }
 
+.nav-links button:focus-visible {
+  outline: 1px solid rgba(29,29,31,0.3);
+  outline-offset: 4px;
+  border-radius: 999px;
+}
     .logo {
       width: 220px;
       display: block;
@@ -152,7 +160,6 @@
   border-radius: 22px;
   padding: 28px;
 }
-}
 
     .event-gallery,
     .wedding-gallery {
@@ -160,6 +167,25 @@
       margin: 60px auto 0;
       position: relative;
     }
+
+.event-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.07);
+}
+
+.quick-booking {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.quick-booking:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.22);
+  opacity: 1;
+}
 
 .slider-image {
   width: 100%;
@@ -169,6 +195,36 @@
   border-radius: 18px;
   display: block;
   margin: auto;
+}
+
+input, textarea, select {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: rgba(29,29,31,0.55);
+  box-shadow: 0 0 0 5px rgba(29,29,31,0.10);
+}
+
+.button-wrap button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.button-wrap button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.16);
+  opacity: 1;
+}
+
+.logo {
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.04);
 }
 
 .image-wrap {
@@ -307,47 +363,199 @@
   margin-bottom: 18px;
 }
 
-    @media (max-width: 700px) {
-      .top-nav {
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-      }
+   @media (max-width: 700px) {
+ .top-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 110px 1fr 1fr;
+  align-items: center;
+  padding: 24px 10px;
+  column-gap: 8px;
+}
 
-      .nav-links {
-        gap: 22px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
+.nav-links {
+  display: contents;
+}
 
-      .nav-left,
-      .nav-right {
-        padding: 0;
-      }
+.nav-left button:nth-child(1) {
+  grid-column: 1;
+  justify-self: center;
+}
 
-      .logo {
-        width: 230px;
-      }
+.nav-left button:nth-child(2) {
+  grid-column: 2;
+  justify-self: center;
+}
 
-      .hero {
-        height: 260px;
-        background-attachment: scroll;
-      }
+.logo {
+  grid-column: 3;
+  justify-self: center;
+  width: 130px;
+  transform: none;
+}
 
-      h2 {
-        font-size: 38px;
-      }
+.nav-right button:nth-child(1) {
+  grid-column: 4;
+  justify-self: center;
+}
 
-      .slider-image {
-        max-height: 390px;
-      }
-    }
+.nav-right button:nth-child(2) {
+  grid-column: 5;
+  justify-self: center;
+}
+
+.nav-links button {
+  font-size: 13px;
+  white-space: nowrap;
+}
+  .hero {
+    height: 180px !important;
+    background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.25)), url("hero-mobile.jpg") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: scroll !important;
+  }
+
+  .page {
+    padding: 55px 24px;
+  }
+
+  h2 {
+    font-size: 34px;
+    margin-bottom: 16px;
+  }
+
+  .tagline {
+    font-size: 17px;
+    line-height: 1.45;
+    max-width: 330px;
+    margin: -5px auto 28px;
+  }
+
+  p {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+.about {
+  max-width: 340px;
+  text-align: center;
+}
+
+.about p {
+  text-align: center;
+}
+
+  .slider-image {
+    max-height: 390px;
+  }
+
+  .enquire-now {
+    right: 16px;
+    bottom: 18px;
+    padding: 13px 22px;
+    font-size: 13px;
+  }
+h2 {
+  font-size: 25px;
+  margin-bottom: 14px;
+}
+
+.tagline {
+  font-size: 14px;
+  line-height: 1.45;
+  max-width: 310px;
+  margin: -4px auto 26px;
+}
+
+p {
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.about {
+  max-width: 320px;
+  text-align: center;
+}
+
+.about p {
+  text-align: center;
+}
+.intro-text {
+  font-size: 14px;
+  line-height: 1.45;
+  max-width: 310px;
+  margin: 0 auto 36px;
+}
+
+.event-card {
+  padding: 18px;
+  border-radius: 16px;
+}
+
+.event-card h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.event-card p {
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.event-cards {
+  gap: 18px;
+  margin-bottom: 26px;
+}
+
+.intro-text {
+  font-size: 14px;
+  line-height: 1.45;
+  max-width: 300px;
+  margin: 0 auto 30px;
+}
+.wedding-copy {
+  max-width: 300px;
+  margin: 0 auto 30px;
+}
+
+.wedding-copy p {
+  font-size: 14px;
+  line-height: 1.45;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+#weddings h2 {
+  font-size: 25px;
+  margin-bottom: 14px;
+}
+
+.wedding-gallery {
+  margin-top: 30px;
+}
+#booking h2 {
+  font-size: 25px;
+  margin-bottom: 14px;
+}
+
+#booking .booking-intro {
+  font-size: 14px;
+  line-height: 1.45;
+  max-width: 300px;
+  margin: 0 auto 32px;
+}
+
+#booking input,
+#booking textarea,
+#booking select {
+  font-size: 12px;
+}
+}
   </style>
 </head>
 
 <body>
 
-<button class="quick-booking" onclick="openPopup()">Quick Booking</button>
+<button class="quick-booking" onclick="openPopup()">Enquire Now</button>
 
 <nav class="top-nav">
   <div class="nav-links nav-left">
@@ -368,7 +576,7 @@
 <section id="about" class="page active">
   <h2>About Ben</h2>
 
-  <p class="tagline">Melbourne DJ for weddings, private events, bars & corporate functions.</p>
+  <p class="tagline"> Melbourne DJ for Weddings & Private Events.</p>
 
   <div class="about">
     <p>
@@ -449,10 +657,13 @@
     </p>
   </div>
 
-  <div class="wedding-gallery">
+<div class="wedding-gallery">
   <div class="image-wrap">
-  <img id="weddingSlider" class="slider-image" src="Ben&Bride.png">
+    <img id="weddingSlider" class="slider-image" src="Ben&Bride.png">
+  </div>
 </div>
+
+</section>
 
 </section>
 
@@ -494,7 +705,7 @@
 <div id="popup" class="popup-bg">
   <div class="popup">
     <button class="close-x" onclick="closePopup()">×</button>
-    <h2>Quick Booking</h2>
+    <h2>Enquire Now</h2>
 
     <p class="booking-intro">
       Get in contact to secure your date and receive a tailored quote for your event.
@@ -574,10 +785,10 @@
   }
 
   const eventImages = [
+"BenB&W.png",
     "CrowdImage.png",
     "BenWSetup.png",
     "BenGlasses.JPG",
-    "BenB&W.png",
     "BenCouple2.png",
     "BenNoGlasses.JPG",
     "BenMCG.png",
@@ -595,6 +806,7 @@
   }
 
   const weddingImages = [
+"BenB&W.png",
     "Ben&Bride.png",
     "BenCouple.png",
     "BenWSetup3.png",
