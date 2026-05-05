@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DJ Ben Saliba</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #F5F5F7;
+      color: #1D1D1F;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .top-nav {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 30px 20px;
+      background: #F5F5F7;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .nav-left {
+      justify-content: flex-end;
+      padding-right: 50px;
+    }
+
+    .nav-right {
+      justify-content: flex-start;
+      padding-left: 50px;
+    }
+
+    .nav-links button {
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      color: #1D1D1F;
+      padding: 0;
+    }
+
+    .nav-links button:hover {
+      opacity: 0.5;
+    }
+
+    .logo {
+      width: 220px;
+      display: block;
+      cursor: pointer;
+    }
+
+    .hero {
+      height: 430px;
+      background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.25)), url("hero.jpg");
+      background-size: cover;
+      background-position: center 70%;
+      background-attachment: fixed;
+    }
+
+    .page {
+      display: none;
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 25px;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 46px;
+      margin: 0 0 22px;
+      letter-spacing: -1px;
+    }
+
+    h3 {
+      font-size: 26px;
+      margin: 0 0 12px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .tagline {
+      text-align: center;
+      max-width: 680px;
+      margin: -10px auto 35px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #1D1D1F;
+    }
+
+    .about {
+      max-width: 820px;
+      margin: auto;
+    }
+
+    .about-feature {
+      margin-top: 45px;
+    }
+
+    .about-feature img {
+      width: 100%;
+      max-height: 620px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: none;
+      display: block;
+    }
+
+    .intro-text {
+      max-width: 760px;
+      margin: 0 auto 45px;
+      text-align: center;
+      color: rgba(29,29,31,0.72);
+    }
+
+    .event-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+.event-cards {
+  margin-bottom: 40px;
+}
+
+    .event-card {
+      border-top: 1px solid rgba(29,29,31,0.18);
+      padding-top: 24px;
+    }
+
+  .event-card {
+  background: #EFEFF1;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 22px;
+  padding: 28px;
+}
+}
+
+    .event-gallery,
+    .wedding-gallery {
+      max-width: 850px;
+      margin: 60px auto 0;
+      position: relative;
+    }
+
+.slider-image {
+  width: 100%;
+  height: auto;        /* ← important */
+  max-height: 620px;   /* optional limit */
+  object-fit: contain; /* ← keeps full image */
+  border-radius: 18px;
+  display: block;
+  margin: auto;
+}
+
+.image-wrap {
+  border-radius: 18px;
+  overflow: hidden;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.event-gallery,
+.wedding-gallery {
+  text-align: center;
+}
+
+    .booking-intro {
+      max-width: 680px;
+      margin: 0 auto 40px;
+      text-align: center;
+      color: rgba(29,29,31,0.7);
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    form {
+      max-width: 720px;
+      margin: auto;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 16px;
+      margin: 10px 0 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(29,29,31,0.18);
+      background: transparent;
+      font-size: 16px;
+      font-family: inherit;
+      box-sizing: border-box;
+      color: #1D1D1F;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    button, .quick-booking {
+      background: #1D1D1F;
+      color: #F5F5F7;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    button:hover, .quick-booking:hover {
+      opacity: 0.85;
+    }
+
+    .button-wrap {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .quick-booking {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 20;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    }
+
+    .popup-bg {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 30;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .popup-bg.active {
+      display: flex;
+    }
+
+    .popup {
+      background: #F5F5F7;
+      padding: 36px;
+      border-radius: 24px;
+      max-width: 650px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .close-x {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      font-size: 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #1D1D1F;
+      padding: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 45px 20px;
+      color: #777;
+    }
+
+#weddings {
+  text-align: center;
+}
+
+#weddings h2 {
+  margin-bottom: 20px;
+}
+
+.wedding-copy {
+  max-width: 700px;   /* same feel as Events */
+  margin: 0 auto 40px auto;
+}
+
+.wedding-copy p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(29,29,31,0.75);
+  margin-bottom: 18px;
+}
+
+    @media (max-width: 700px) {
+      .top-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .nav-links {
+        gap: 22px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nav-left,
+      .nav-right {
+        padding: 0;
+      }
+
+      .logo {
+        width: 230px;
+      }
+
+      .hero {
+        height: 260px;
+        background-attachment: scroll;
+      }
+
+      h2 {
+        font-size: 38px;
+      }
+
+      .slider-image {
+        max-height: 390px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<button class="quick-booking" onclick="openPopup()">Quick Booking</button>
+
+<nav class="top-nav">
+  <div class="nav-links nav-left">
+    <button onclick="showPage('about')">Home</button>
+    <button onclick="showPage('events')">Events</button>
+  </div>
+
+  <img src="logo.png" class="logo" alt="DJ Ben Saliba Logo" onclick="showPage('about')">
+
+  <div class="nav-links nav-right">
+    <button onclick="showPage('weddings')">Weddings</button>
+    <button onclick="showPage('booking')">Bookings</button>
+  </div>
+</nav>
+
+<section class="hero"></section>
+
+<section id="about" class="page active">
+  <h2>About Ben</h2>
+
+  <p class="tagline">Melbourne DJ for weddings, private events, bars & corporate functions.</p>
+
+  <div class="about">
+    <p>
+      Based in Melbourne, Ben brings over a decade of DJ experience to weddings, birthdays, private functions, bars, and large-scale events. Known for his ability to read the room and adapt in real time, he tailors every set to the crowd and atmosphere to create a seamless, memorable night from start to finish.
+    </p>
+
+    <p>
+      Ben has performed at a wide range of events, from intimate celebrations to major corporate functions, including work with organisations such as the AFL and Formula 1. Professional, reliable, and easy to work with, he focuses on delivering an experience that feels effortless for clients and unforgettable for guests.
+    </p>
+
+    <div class="about-feature">
+      <img src="Ben3.JPG" alt="DJ Ben Saliba performing">
+    </div>
+
+    <h2 style="margin-top: 70px;">Testimonials</h2>
+
+    <p class="intro-text">
+      Testimonials coming soon.
+    </p>
+  </div>
+</section>
+
+<section id="events" class="page">
+  <h2>Events</h2>
+
+  <p class="intro-text">
+    From intimate celebrations to large-scale functions, Ben creates sets that fit the room, crowd and energy.
+  </p>
+
+  <div class="event-cards">
+    <div class="event-card">
+      <h3>Weddings</h3>
+      <p>Ceremony, reception and dance floor music tailored to your day.</p>
+    </div>
+
+    <div class="event-card">
+      <h3>Birthdays</h3>
+      <p>From relaxed background music to full party mode.</p>
+    </div>
+
+    <div class="event-card">
+      <h3>Engagements</h3>
+      <p>Warm, celebratory sets for intimate or large gatherings.</p>
+    </div>
+
+    <div class="event-card">
+      <h3>Corporate Events</h3>
+      <p>Professional music for functions, brand events and large-scale events.</p>
+    </div>
+
+    <div class="event-card">
+      <h3>Bars</h3>
+      <p>Energetic sets for venues, late nights and dance floors.</p>
+    </div>
+
+    <div class="event-card">
+      <h3>Private Functions</h3>
+      <p>Tailored music for house parties, celebrations and special events.</p>
+    </div>
+  </div>
+
+  <div class="event-gallery">
+   <div class="image-wrap">
+  <img id="eventSlider" class="slider-image" src="CrowdImage.png">
+  </div>
+</section>
+
+<section id="weddings" class="page">
+  <h2>Weddings</h2>
+
+  <div class="wedding-copy">
+    <p>
+      From ceremony music to cocktail hour through to the final dance floor moments, Ben creates wedding sets that feel seamless, personal and perfectly suited to the couple and their guests.
+    </p>
+
+    <p>
+      Whether you want timeless classics, disco, house, R&amp;B, throwbacks or a full dance-floor party, Ben adapts in real time to create an unforgettable night.
+    </p>
+  </div>
+
+  <div class="wedding-gallery">
+  <div class="image-wrap">
+  <img id="weddingSlider" class="slider-image" src="Ben&Bride.png">
+</div>
+
+</section>
+
+<section id="booking" class="page">
+  <h2>Bookings</h2>
+
+  <p class="booking-intro">
+    Get in contact to secure your date and receive a tailored quote for your event.
+  </p>
+
+  <form class="booking-form">
+    <input type="text" name="Name" placeholder="Your name" required>
+    <input type="email" name="Email" placeholder="Your email" required>
+    <input type="text" name="Phone" placeholder="Phone number">
+       <input type="number" name="Guests" placeholder="Approx. number of guests">
+<input type="text" name="Event location" placeholder="Event location">
+    <select name="Event type" required>
+      <option value="">Select event type</option>
+      <option>Wedding</option>
+      <option>Birthday</option>
+      <option>Engagement</option>
+      <option>Corporate Event</option>
+      <option>Bar / Venue</option>
+      <option>Private Function</option>
+      <option>Other</option>
+    </select>
+
+    <input type="date" name="Event date">
+ 
+
+    <textarea name="Message" rows="6" placeholder="Tell us about your event"></textarea>
+
+    <div class="button-wrap">
+      <button type="submit">Request Quote</button>
+    </div>
+  </form>
+</section>
+
+<div id="popup" class="popup-bg">
+  <div class="popup">
+    <button class="close-x" onclick="closePopup()">×</button>
+    <h2>Quick Booking</h2>
+
+    <p class="booking-intro">
+      Get in contact to secure your date and receive a tailored quote for your event.
+    </p>
+
+    <form class="booking-form">
+      <input type="text" name="Name" placeholder="Your name" required>
+      <input type="email" name="Email" placeholder="Your email" required>
+      <input type="text" name="Phone" placeholder="Phone number">
+<input type="number" name="Guests" placeholder="Approx. number of guests">
+<input type="text" name="Event location" placeholder="Event location">
+
+      <select name="Event type" required>
+        <option value="">Select event type</option>
+        <option>Wedding</option>
+        <option>Birthday</option>
+        <option>Engagement</option>
+        <option>Corporate Event</option>
+        <option>Bar / Venue</option>
+        <option>Private Function</option>
+        <option>Other</option>
+      </select>
+
+      <input type="date" name="Event date">
+      
+      <textarea name="Message" rows="5" placeholder="Quick details"></textarea>
+
+      <div class="button-wrap">
+        <button type="submit">Send Enquiry</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="successPopup" class="popup-bg">
+  <div class="popup">
+    <button class="close-x" onclick="closeSuccessPopup()">×</button>
+    <h2>Thank You</h2>
+
+    <p class="booking-intro">
+      Your enquiry has been submitted successfully. Ben will be in contact within 24–48 hours to discuss your event.
+    </p>
+
+    <div class="button-wrap">
+      <button onclick="closeSuccessPopup()">Close</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+<p>‭0423 777 852‬<p>
+  <p>bookings@djbensaliba.com</p>
+  <p>© 2026 DJ Ben Saliba</p>
+</footer>
+
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function openPopup() {
+    document.getElementById('popup').classList.add('active');
+  }
+
+  function closePopup() {
+    document.getElementById('popup').classList.remove('active');
+  }
+
+  function openSuccessPopup() {
+    document.getElementById('successPopup').classList.add('active');
+  }
+
+  function closeSuccessPopup() {
+    document.getElementById('successPopup').classList.remove('active');
+  }
+
+  const eventImages = [
+    "CrowdImage.png",
+    "BenWSetup.png",
+    "BenGlasses.JPG",
+    "BenB&W.png",
+    "BenCouple2.png",
+    "BenNoGlasses.JPG",
+    "BenMCG.png",
+    "ben1.jpg"
+  ];
+
+  let eventIndex = 0;
+
+  function nextEventImage() {
+    const eventSlider = document.getElementById("eventSlider");
+    if (eventSlider) {
+      eventIndex = (eventIndex + 1) % eventImages.length;
+      eventSlider.src = eventImages[eventIndex];
+    }
+  }
+
+  const weddingImages = [
+    "Ben&Bride.png",
+    "BenCouple.png",
+    "BenWSetup3.png",
+    "Setup1.png",
+    "BenSuit.PNG",
+    "BenWSetup2.png"
+  ];
+
+  let weddingIndex = 0;
+
+  function nextWeddingImage() {
+    const weddingSlider = document.getElementById("weddingSlider");
+    if (weddingSlider) {
+      weddingIndex = (weddingIndex + 1) % weddingImages.length;
+      weddingSlider.src = weddingImages[weddingIndex];
+    }
+  }
+
+  setInterval(nextEventImage, 3500);
+  setInterval(nextWeddingImage, 3500);
+
+  const forms = document.querySelectorAll('.booking-form');
+
+  forms.forEach(form => {
+    form.addEventListener('submit', async function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch('https://formspree.io/f/mlgzbblw', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          form.reset();
+          closePopup();
+          openSuccessPopup();
+        } else {
+          alert('Something went wrong. Please try again or email bookings@djbensaliba.com directly.');
+        }
+      } catch (error) {
+        alert('Something went wrong. Please try again or email bookings@djbensaliba.com directly.');
+      }
+    });
+  });
+</script>
+</body>
+</html>
