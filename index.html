@@ -136,7 +136,7 @@ transform: scale(1.06);
       max-width: 760px;
       margin: 0 auto 45px;
       text-align: center;
-      color: rgba(29,29,31,0.72);
+      color: #1D1D1F;
     }
 
     .event-cards {
@@ -209,6 +209,13 @@ select:focus {
   box-shadow: 0 0 0 5px rgba(29,29,31,0.10);
 }
 
+input:hover,
+textarea:hover,
+select:hover {
+  border-color: rgba(29,29,31,0.38);
+  box-shadow: 0 0 0 4px rgba(29,29,31,0.06);
+}
+
 .button-wrap button {
   transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
@@ -243,7 +250,7 @@ select:focus {
       max-width: 680px;
       margin: 0 auto 40px;
       text-align: center;
-      color: rgba(29,29,31,0.7);
+     color: #1D1D1F;
       font-size: 18px;
       line-height: 1.6;
     }
@@ -357,19 +364,19 @@ select:focus {
 }
 
 .wedding-copy p {
-  font-size: 17px;
-  line-height: 1.6;
-  color: rgba(29,29,31,0.75);
+  font-size: 18px;
+  line-height: 1.7;
+  color: #1D1D1F;
   margin-bottom: 18px;
 }
 
    @media (max-width: 700px) {
- .top-nav {
+.top-nav {
   display: grid;
-  grid-template-columns: 1fr 1fr 110px 1fr 1fr;
+  grid-template-columns: 1fr 1fr 90px 1fr 1fr;
   align-items: center;
   padding: 24px 10px;
-  column-gap: 8px;
+  column-gap: 4px;
 }
 
 .nav-links {
@@ -379,6 +386,7 @@ select:focus {
 .nav-left button:nth-child(1) {
   grid-column: 1;
   justify-self: center;
+transform: translateX(-3px);
 }
 
 .nav-left button:nth-child(2) {
@@ -389,13 +397,13 @@ select:focus {
 .logo {
   grid-column: 3;
   justify-self: center;
-  width: 130px;
+  width: 120px;
   transform: none;
 }
 
 .nav-right button:nth-child(1) {
   grid-column: 4;
-  justify-self: center;
+  justify-self: start;
 }
 
 .nav-right button:nth-child(2) {
@@ -576,15 +584,19 @@ p {
 <section id="about" class="page active">
   <h2>About Ben</h2>
 
-  <p class="tagline"> Melbourne DJ for Weddings & Private Events.</p>
+  <p class="tagline">Melbourne DJ for Weddings & Private Events.</p>
 
   <div class="about">
     <p>
-      Based in Melbourne, Ben brings over a decade of DJ experience to weddings, birthdays, private functions, bars, and large-scale events. Known for his ability to read the room and adapt in real time, he tailors every set to the crowd and atmosphere to create a seamless, memorable night from start to finish.
+      I’ve been DJing for over 10 years across weddings, bars, birthdays, private functions and large-scale events in Melbourne. My goal is simple — read the room, play the right music, and create a night people actually remember.
     </p>
 
     <p>
-      Ben has performed at a wide range of events, from intimate celebrations to major corporate functions, including work with organisations such as the AFL and Formula 1. Professional, reliable, and easy to work with, he focuses on delivering an experience that feels effortless for clients and unforgettable for guests.
+      I tailor every set to suit the crowd, the atmosphere and the flow of the event, adapting in real time to keep the energy exactly where it needs to be. Over the years, I’ve performed at a wide range of events, from intimate celebrations to major corporate functions, including work with organisations such as the AFL and Formula 1.
+    </p>
+
+    <p>
+      I’m professional, reliable and easy to work with, and my focus is always on making the process feel effortless for you while creating a seamless, memorable experience for your guests.
     </p>
 
     <div class="about-feature">
@@ -603,7 +615,7 @@ p {
   <h2>Events</h2>
 
   <p class="intro-text">
-    From intimate celebrations to large-scale functions, Ben creates sets that fit the room, crowd and energy.
+    Whether it’s an intimate celebration or a large-scale function, I take the time to understand the atmosphere you want and create a set that feels personal, seamless and true to the moment.
   </p>
 
   <div class="event-cards">
@@ -634,7 +646,7 @@ p {
 
     <div class="event-card">
       <h3>Private Functions</h3>
-      <p>Tailored music for house parties, celebrations and special events.</p>
+      <p>Tailored music for house parties, university events, celebrations and special occasions.</p>
     </div>
   </div>
 
@@ -649,11 +661,12 @@ p {
 
   <div class="wedding-copy">
     <p>
-      From ceremony music to cocktail hour through to the final dance floor moments, Ben creates wedding sets that feel seamless, personal and perfectly suited to the couple and their guests.
+      From the ceremony to cocktail hour and the final dance floor moments, I’ll work with you to create a soundtrack that feels personal, seamless and true to you as a couple.
     </p>
 
     <p>
-      Whether you want timeless classics, disco, house, R&amp;B, throwbacks or a full dance-floor party, Ben adapts in real time to create an unforgettable night.
+      Whether you’re after timeless classics, disco, house, R&B, throwbacks or a full dance-floor party, I’ll read the room and adapt in real time to keep the energy flowing and make sure you and your guests have a night to remember.
+
     </p>
   </div>
 
@@ -756,7 +769,6 @@ p {
 </div>
 
 <footer>
-<p>‭0423 777 852‬<p>
   <p>bookings@djbensaliba.com</p>
   <p>© 2026 DJ Ben Saliba</p>
 </footer>
@@ -809,6 +821,8 @@ p {
 "BenB&W.png",
     "BenBride.png",
     "BenWSetup3.png",
+ "BenW.png",
+ "Setup4.png",
    "BenCouple.png",
  "Setup1.png",
     "BenSuit.PNG",
